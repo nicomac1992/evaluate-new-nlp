@@ -4,19 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width , initial-scale=1.0 " />
-    <title>Evaluate news article NLP</title>
+    <title>Evaluate news articles</title>
 </head>
 
 <body>
     <header>
-        <h1>Sentiment Analysis</h1>
+        <h1>Sentimental Analysis on Websites</h1>
     </header>
 
     <main>
         <section>
-            <form onsubmit="return Client.handleSubmit(event)">
+            <form onsubmit="return Client.handleSubmitButton(event)">
                 <input type="text" id="url" placeholder="http://" />
-                <input type="submit" id="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)" />
+                <input type="submit" id="submit" onclick="return Client.handleSubmitButton(event)" onsubmit="return Client.handleSubmitButton(event)" />
             </form>
         </section>
 
@@ -32,7 +32,7 @@
     </main>
 
     <footer>
-        <p>@Copyright Nicholas McNeil</p>
+        <p>@ Copyright Nicholas Alexander McNeil</p>
     </footer>
     <script>
         if ("serviceWorker" in navigator) {

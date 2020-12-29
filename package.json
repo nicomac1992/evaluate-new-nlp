@@ -44,6 +44,6 @@
         "terser-webpack-plugin": "^4.2.3",
         "webpack-dev-server": "^3.7.2",
         "webpack-merge": "5.1.4",
-        "workbox-webpack-plugin": "^5.1.4"
+        "workbox-webpack-plugin": "5.1.4"
     }
 }

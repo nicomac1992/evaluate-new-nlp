@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const path = require('path');
+
 const express = require('express');
 const mockAPIResponse = require("./mockAPI");
 const API_KEY = process.env.API_KEY;
@@ -15,7 +15,7 @@ app.use(bodyParser.text());
 
 
 const cors = require('cors');
-app.use(cors);
+app.use(cors());
 
 
 app.use(express.static('dist'));
@@ -29,22 +29,18 @@ app.get("/test", (req, res) => {
     res.send(mockAPIResponse);
 });
 
-app.post("article", async(req, res) => {
-    const resp = await fetch(`${baseUrl}${API_KEY}&lang=auto&url=${req.body}`);
+app.post("/article", async(req, res) => {
+    const response = await fetch(`${baseUrl}${API_KEY}&lang=auto&url=${req.body}`);
 
     try {
-        const data = await resp.json();
+        const data = await response.json();
         res.send(data);
     } catch (err) {
         console.log("error", err);
     }
-
-
-
 });
 
-
-const port = process.env.port || 8080;
-app.listen(8080, function() {
+const port = process.env.port || 8000;
+app.listen(8000, function() {
     console.log(`App listening on port ${port}!`)
 });

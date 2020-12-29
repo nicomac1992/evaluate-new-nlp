@@ -1,6 +1,6 @@
 import { checkForName } from "./nameChecker";
 
-function handleSubmit(event) {
+function handleSubmitButton(event) {
     event.preventDefault();
 
     let formTexting = document.getElementById("url").value;
@@ -9,7 +9,7 @@ function handleSubmit(event) {
     if (checkForName(formTexting)) {
         console.log("valid url");
 
-        fetch("http://localhost:8080/article", {
+        fetch("http://localhost:8000/article", {
                 method: "POST",
                 cache: "no-cache",
                 credentials: "same-origin",
@@ -22,7 +22,7 @@ function handleSubmit(event) {
             .then((res) => {
                 console.log("res ui", res);
 
-                document.querySelector("score").innerHTML = `Polarity score: ${score(res.score_tag)}`;
+                document.querySelector("#score").innerHTML = `Polarity score: ${score(res.score_tag)}`;
                 document.querySelector(
                     "#subjectivity"
                 ).innerHTML = `Subjectivity : ${letterCase(res.subjectivity)}`;
@@ -32,7 +32,7 @@ function handleSubmit(event) {
                 document.querySelector("#irony").innerHTML = `Irony: ${letterCase(res.irony)}`;
             });
     } else {
-        console.log("invalid url")
+        console.log("this is an invalid url")
     }
 
 }
@@ -41,7 +41,7 @@ const letterCase = (word) => {
     return word.charAt(0) + word.slice(1).toLowerCase();
 };
 
-const score = (score_tag) => {
+const scoreTags = (score_tag) => {
     if (score_tag === "P+" || score_tag === "P") {
         return "Positive";
     } else if (score_tag === "N+" || score_tag === "N") {
@@ -53,4 +53,4 @@ const score = (score_tag) => {
     }
 };
 
-export { handleSubmit, score };
+export { handleSubmitButton, scoreTags };
