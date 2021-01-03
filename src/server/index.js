@@ -40,7 +40,7 @@ app.post("/article", async(req, res) => {
     }
 });
 
-const port = process.env.port || 8000;
-app.listen(8000, function() {
+const port = process.env.port || 8080;
+app.listen(8080, function() {
     console.log(`App listening on port ${port}!`)
 });

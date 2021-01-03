@@ -33,12 +33,12 @@ form #url {
 
 form #submit {
     cursor: pointer;
-    background: goldenrod;
-    color: blue;
+    background: black;
+    color: white;
 }
 
 form #submit:hover {
-    background: goldenrod;
+    background: gray;
 }
 
 form #url form #submit {
@@ -61,7 +61,6 @@ article {
     width: 16 rem;
     padding: 0.6 rem;
     margin: 1 rem;
-    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
     text-align: center;
     background: #fff;
     border-radius: 3px;

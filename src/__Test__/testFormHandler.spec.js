@@ -1,4 +1,3 @@
-import { TestScheduler } from "jest";
 import { scoreTags } from "../src/client/js/formHandler";
 
 describe("test score levels", () => {

@@ -46,8 +46,7 @@ module.exports = {
         new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
         new CleanWebpackPlugin(),
         new WorkboxPlugin.GenerateSW({
-            // these options encourage the ServiceWorkers to get in there fast
-            // and not allow any straggling "old" SWs to hang around
+
             clientsClaim: true,
             skipWaiting: true,
         }),
@@ -55,5 +54,6 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
+
     ],
 };

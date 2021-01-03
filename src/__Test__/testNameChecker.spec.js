@@ -1,4 +1,4 @@
-import { checkForName } from "../src/client/nameChecker";
+import { checkForName } from "/src/client/js/nameChecker";
 
 describe("url protocol", () => {
     test("it will return true", () => {

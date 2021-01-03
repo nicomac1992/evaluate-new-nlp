@@ -9,7 +9,7 @@ function handleSubmitButton(event) {
     if (checkForName(formTexting)) {
         console.log("valid url");
 
-        fetch("http://localhost:8000/article", {
+        fetch("http://localhost:8080/article", {
                 method: "POST",
                 cache: "no-cache",
                 credentials: "same-origin",
@@ -22,7 +22,7 @@ function handleSubmitButton(event) {
             .then((res) => {
                 console.log("res ui", res);
 
-                document.querySelector("#score").innerHTML = `Polarity score: ${score(res.score_tag)}`;
+                document.querySelector("#score").innerHTML = `Polarity score: ${scoreTags(res.score_tag)}`;
                 document.querySelector(
                     "#subjectivity"
                 ).innerHTML = `Subjectivity : ${letterCase(res.subjectivity)}`;
